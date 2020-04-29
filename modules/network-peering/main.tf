@@ -20,7 +20,7 @@ locals {
 }
 
 resource "google_compute_network_peering" "local_network_peering" {
-  provider             = "google-beta"
+  provider             = google
   name                 = "${var.prefix}-${local.local_network_name}-${local.peer_network_name}"
   network              = var.local_network
   peer_network         = var.peer_network
